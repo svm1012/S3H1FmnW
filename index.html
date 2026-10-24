@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#090b12">
+<title>S3H1FmnW — PLAY ARENA</title>
+<style>
+:root{--bg:#090b12;--panel:#111522;--panel2:#171d2e;--line:#272f46;--text:#eef2ff;--muted:#8e9ab8;--cyan:#59f3ff;--pink:#ff4fd8;--green:#7dffb2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#202354 0,transparent 38%),radial-gradient(ellipse at 0 55%,#102b35 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer;color:inherit;border:0}button:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:radial-gradient(#fff 0.55px,transparent .55px);background-size:7px 7px;mask-image:linear-gradient(to bottom,black,transparent 80%);z-index:-1}
+header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);border-bottom:1px solid #ffffff12;background:#090b12bb;backdrop-filter:blur(16px);position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:11px;font-weight:950;letter-spacing:.08em}.logo{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--cyan),#7d6bff 55%,var(--pink));display:grid;place-items:center;color:#080b14;font-weight:1000;box-shadow:0 0 24px #59f3ff45}
+.brand small{display:block;font-size:9px;letter-spacing:.25em;color:var(--muted);margin-top:2px}.head-right{display:flex;align-items:center;gap:12px}.status{font-size:11px;color:var(--green);display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green)}
+.user-pill{font-size:12px;border:1px solid var(--line);background:var(--panel);border-radius:99px;padding:9px 12px;color:#dce4ff}
+main{max-width:1150px;margin:auto;padding:36px 20px 60px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;min-height:330px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.24em;color:var(--cyan);text-transform:uppercase}.hero h1{font-size:clamp(38px,6vw,70px);line-height:.98;letter-spacing:-.055em;margin:16px 0}.hero h1 span{color:transparent;-webkit-text-stroke:1px var(--cyan);text-shadow:0 0 28px #59f3ff26}.hero p{color:var(--muted);line-height:1.7;max-width:520px;font-size:14px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{padding:12px 17px;border-radius:12px;font-size:13px;font-weight:850;transition:transform .18s,filter .18s,box-shadow .18s}.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.primary{background:linear-gradient(110deg,var(--cyan),#8cfbd2);color:#071016;box-shadow:0 7px 25px #59f3ff22}.secondary{background:#ffffff08;border:1px solid var(--line)}
+.hero-art{position:relative;min-height:270px;display:grid;place-items:center;overflow:hidden;border:1px solid #59f3ff22;border-radius:28px;background:linear-gradient(145deg,#151b31,#0d111d 70%);box-shadow:inset 0 0 70px #5d55ff0b}
+.orbit{position:absolute;width:220px;height:220px;border:1px solid #59f3ff66;border-radius:50%;animation:spin 16s linear infinite}.orbit:before{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--pink);box-shadow:0 0 22px var(--pink);top:28px;left:25px}.orbit.two{width:165px;height:165px;border-color:#ff4fd866;animation-direction:reverse;animation-duration:10s}.core{width:112px;height:112px;display:grid;place-items:center;font-size:45px;border-radius:28px;background:linear-gradient(135deg,#59f3ff25,#a18bff25);border:1px solid #59f3ff88;box-shadow:0 0 55px #59f3ff25;animation:float 3s ease-in-out infinite}.art-label{position:absolute;bottom:18px;left:18px;color:var(--muted);font-size:10px;letter-spacing:.15em}.art-label strong{display:block;color:var(--cyan);font-size:12px;margin-top:5px}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translateY(-8px) rotate(3deg)}}@keyframes pulse{50%{box-shadow:0 0 30px #59f3ff55}}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:42px 0 16px}.section-head h2{margin:0;font-size:22px;letter-spacing:-.03em}.section-head p{margin:5px 0 0;color:var(--muted);font-size:12px}.tag{border:1px solid #59f3ff3d;color:var(--cyan);border-radius:7px;padding:6px 9px;font-size:10px;font-weight:800;letter-spacing:.1em}
+.games{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.game-card{position:relative;overflow:hidden;text-align:left;background:linear-gradient(150deg,#171d2d,#10131d);border:1px solid var(--line);border-radius:18px;padding:19px;min-height:190px;transition:.2s}.game-card:hover{transform:translateY(-4px);border-color:#59f3ff88;box-shadow:0 12px 32px #0005}.game-icon{font-size:29px;width:55px;height:55px;border-radius:16px;display:grid;place-items:center;background:#59f3ff10;border:1px solid #59f3ff2b}.game-card h3{margin:17px 0 6px;font-size:16px}.game-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.play-link{position:absolute;right:17px;top:20px;color:var(--cyan);font-size:19px}
+.lower{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.panel{background:linear-gradient(145deg,#141927,#0f121c);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}.panel h3{margin:0 0 6px;font-size:16px}.sub{color:var(--muted);font-size:12px;line-height:1.6;margin:0 0 16px}.chat-log{height:190px;overflow-y:auto;display:flex;flex-direction:column;gap:9px;padding:10px;background:#090c14;border:1px solid #ffffff0b;border-radius:12px}.msg{max-width:90%;align-self:flex-start;background:#1a2234;border:1px solid #ffffff0d;border-radius:4px 12px 12px 12px;padding:9px 11px;font-size:12px;line-height:1.5;overflow-wrap:anywhere}.msg.mine{align-self:flex-end;background:#10323b;border-color:#59f3ff2d;border-radius:12px 4px 12px 12px}.msg b{display:block;color:var(--cyan);font-size:10px;margin-bottom:3px}.chat-compose{display:flex;gap:8px;margin-top:9px}.chat-compose input,.login-form input{width:100%;min-width:0;background:#090c14;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px}.chat-compose button{background:var(--cyan);color:#071016;border-radius:10px;padding:0 14px;font-weight:900}
+.scoreline{display:flex;justify-content:space-between;align-items:center;margin:12px 0;color:var(--muted);font-size:12px}.scoreline strong{color:var(--text);font-size:19px}.arena{height:190px;position:relative;overflow:hidden;border-radius:13px;border:1px solid #59f3ff2b;background:radial-gradient(circle at center,#172a3a,#090c14 70%);display:grid;place-items:center}.target{position:absolute;width:54px;height:54px;border-radius:50%;display:none;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--pink));color:#080b14;font-size:20px;box-shadow:0 0 28px #59f3ff99;animation:pulse .6s infinite}.arena-note{font-size:12px;color:var(--muted);text-align:center;padding:15px}.game-controls{display:flex;gap:8px;margin-top:10px}.game-controls button{flex:1}
+footer{border-top:1px solid #ffffff12;padding:22px 20px;text-align:center;color:#66718d;font-size:11px;line-height:1.8}
+.overlay{position:fixed;inset:0;background:#03050bd9;backdrop-filter:blur(12px);display:grid;place-items:center;padding:18px;z-index:20}.modal{width:min(100%,420px);background:#111522;border:1px solid #59f3ff45;border-radius:22px;padding:25px;box-shadow:0 20px 90px #0009;animation:appear .25s ease-out}.modal h2{font-size:25px;margin:0 0 8px}.modal p{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 20px}.login-form{display:grid;gap:10px}.login-form .btn{width:100%;margin-top:4px}.close{float:right;background:#ffffff0b;border:1px solid var(--line);border-radius:9px;width:32px;height:32px;font-size:18px}.tiny{font-size:10px!important;margin-top:14px!important;margin-bottom:0!important}.hidden{display:none!important}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#172334;border:1px solid #59f3ff66;padding:11px 15px;border-radius:12px;font-size:12px;z-index:30;box-shadow:0 8px 30px #0008;max-width:90vw;text-align:center}
+@keyframes appear{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:760px){header{height:62px;padding:0 15px}.status{display:none}main{padding:25px 14px 42px}.hero{grid-template-columns:1fr;gap:20px;min-height:0}.hero h1{font-size:clamp(42px,12vw,65px)}.hero-art{min-height:220px}.games{grid-template-columns:1fr}.game-card{min-height:155px}.game-card h3{margin-top:12px}.lower{grid-template-columns:1fr}.section-head{margin-top:32px}.user-pill{max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.brand{font-size:13px}.brand small{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<header>
+  <div class="brand"><div class="logo">S</div><div>S3H1FmnW<small>PLAY ARENA / EST. 2026</small></div></div>
+  <div class="head-right"><div class="status"><span class="dot"></span> SYSTEM ONLINE</div><button class="user-pill" id="accountBtn">로그인 / 가입 ↗</button></div>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">✦ YOUR NEXT LEVEL STARTS HERE</div>
+      <h1>ENTER THE<br><span>PLAY ARENA.</span></h1>
+      <p>게임하고, 기록을 세우고, 메시지를 나눠 봐. S3H1FmnW는 너만의 작은 게이밍 허브야. 준비됐으면 지금 시작!</p>
+      <div class="actions"><button class="btn primary" id="heroPlay">게임 시작하기 ↗</button><button class="btn secondary" id="heroChat">커뮤니티 보기</button></div>
+    </div>
+    <div class="hero-art"><div class="orbit"></div><div class="orbit two"></div><div class="core">⚡</div><div class="art-label">PLAYER ONE / READY<strong>PRESS START TO BEGIN</strong></div></div>
+  </section>
+  <div class="section-head"><div><h2>게임 선택</h2><p>지금 도전할 게임을 골라 봐.</p></div><span class="tag">3 MODES</span></div>
+  <section class="games" id="games">
+    <button class="game-card" data-game="reaction"><span class="play-link">↗</span><div class="game-icon">🎯</div><h3>NEON REFLEX</h3><p>반응 속도 테스트. 타깃이 나타나면 빠르게 눌러!</p></button>
+    <button class="game-card" data-game="memory"><span class="play-link">↗</span><div class="game-icon">🧠</div><h3>PIXEL MEMORY</h3><p>숫자를 기억하고 입력하는 미니 기억력 게임.</p></button>
+    <button class="game-card" data-game="clicker"><span class="play-link">↗</span><div class="game-icon">⚡</div><h3>ENERGY RUSH</h3><p>10초 동안 최대한 많이 클릭해서 점수를 올려!</p></button>
+  </section>
+  <section class="lower">
+    <div class="panel" id="community">
+      <h3>💬 커뮤니티 채팅</h3><p class="sub">메시지를 남기고 이 기기에서 대화를 이어 가.</p>
+      <div class="chat-log" id="chatLog" aria-live="polite"></div>
+      <form class="chat-compose" id="chatForm"><input id="chatInput" maxlength="240" placeholder="메시지 입력..." autocomplete="off" aria-label="채팅 메시지"><button type="submit">전송</button></form>
+      <p class="sub" style="margin:9px 0 0;font-size:10px">현재 버전은 이 브라우저에 메시지를 저장해. 온라인 회원 간 실시간 공유는 서버 연결이 필요해.</p>
+    </div>
+    <div class="panel" id="gamePanel">
+      <h3 id="gameTitle">🎮 QUICK PLAY</h3><p class="sub" id="gameDesc">위에서 게임을 선택하면 여기서 바로 플레이할 수 있어.</p>
+      <div class="scoreline"><span>YOUR SCORE</span><strong id="score">0000</strong><span id="gameState">READY</span></div>
+      <div class="arena" id="arena"><div class="arena-note" id="arenaNote">게임을 선택하고<br>플레이 버튼을 눌러 시작!</div><button class="target" id="target" aria-label="타깃 누르기">✦</button></div>
+      <div class="game-controls"><button class="btn primary" id="startGame">플레이 시작</button><button class="btn secondary" id="resetGame">초기화</button></div>
+    </div>
+  </section>
+</main>
+<footer>S3H1FmnW PLAY ARENA · MADE FOR PLAYERS<br>데모 버전 · 계정과 기록은 현재 사용 중인 브라우저에 저장됩니다.</footer>
+<div class="overlay hidden" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+ <div class="modal"><button class="close" id="closeLogin" aria-label="닫기">×</button><div class="eyebrow">PLAYER ACCESS</div><h2 id="loginTitle">플레이어 등록</h2><p>닉네임을 만들고 플레이를 시작해. 이 데모에서는 비밀번호 없이 닉네임으로 로그인해.</p><form class="login-form" id="loginForm"><input id="nickname" maxlength="18" minlength="2" required placeholder="닉네임 (2~18자)" autocomplete="nickname"><button class="btn primary" type="submit">접속하기 →</button></form><p class="tiny">주의: 실제 서비스용 보안 로그인은 아직 연결되지 않았어. 민감한 개인정보를 입력하지 마.</p></div>
+</div>
+<div class="toast hidden" id="toast" role="status"></div>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const KEY_USER='s3h1_user_v1', KEY_CHAT='s3h1_chat_v1', KEY_SCORES='s3h1_scores_v1';
+  let user = localStorage.getItem(KEY_USER) || '';
+  let selectedGame='reaction', running=false, score=0, timer=null, timeout=null, gameEnds=0, memoryAnswer='', toastTimer;
+  const safeParse=(s,fallback)=>{try{return JSON.parse(s)||fallback}catch{return fallback}};
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function notify(message){$('toast').textContent=message;$('toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.add('hidden'),2600)}
+  function setUser(name){user=name;localStorage.setItem(KEY_USER,name);$('accountBtn').textContent='◉ '+name+' · 로그아웃';renderChat();notify(name+'님, 환영해!')}
+  function openLogin(){$('loginOverlay').classList.remove('hidden');$('nickname').focus()}
+  function closeLogin(){$('loginOverlay').classList.add('hidden')}
+  $('accountBtn').addEventListener('click',()=>{if(user){if(confirm('로그아웃할까?')){user='';localStorage.removeItem(KEY_USER);$('accountBtn').textContent='로그인 / 가입 ↗';notify('로그아웃했어.')}}else openLogin()});
+  $('closeLogin').addEventListener('click',closeLogin);
+  $('loginOverlay').addEventListener('click',e=>{if(e.target===$('loginOverlay'))closeLogin()});
+  $('loginForm').addEventListener('submit',e=>{e.preventDefault();const n=$('nickname').value.trim();if(n.length<2){notify('닉네임은 2자 이상 입력해 줘.');return}setUser(n);closeLogin()});
+  function getMessages(){return safeParse(localStorage.getItem(KEY_CHAT),[])}
+  function renderChat(){const log=$('chatLog'), msgs=getMessages();log.innerHTML='';if(!msgs.length){const welcome=document.createElement('div');welcome.className='msg';welcome.innerHTML='<b>SYSTEM</b>ARENA에 온 걸 환영해! 첫 메시지를 남겨 봐.';log.appendChild(welcome)}else msgs.slice(-60).forEach(m=>{const el=document.createElement('div');el.className='msg'+(m.user===user?' mine':'');const b=document.createElement('b');b.textContent=m.user+' · '+m.time;const t=document.createElement('div');t.textContent=m.text;el.append(b,t);log.appendChild(el)});log.scrollTop=log.scrollHeight}
+  $('chatForm').addEventListener('submit',e=>{e.preventDefault();const text=$('chatInput').value.trim();if(!text)return;if(!user){openLogin();notify('메시지를 보내려면 먼저 닉네임을 등록해 줘.');return}const msgs=getMessages();msgs.push({user,text,time:new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'})});localStorage.setItem(KEY_CHAT,JSON.stringify(msgs.slice(-100)));$('chatInput').value='';renderChat()});
+  window.addEventListener('storage',e=>{if(e.key===KEY_CHAT)renderChat()});
+  const games={
+    reaction:{title:'🎯 NEON REFLEX',desc:'타깃이 나타나면 빠르게 눌러! 20초 동안 반응 속도를 시험해 봐.',state:'READY'},
+    memory:{title:'🧠 PIXEL MEMORY',desc:'화면에 나타나는 숫자를 기억한 뒤 똑같이 입력해.',state:'READY'},
+    clicker:{title:'⚡ ENERGY RUSH',desc:'10초 동안 타깃을 최대한 많이 눌러 점수를 올려!',state:'READY'}
+  };
+  function chooseGame(g){stopGame();selectedGame=g;score=0;$('score').textContent='0000';$('gameTitle').textContent=games[g].title;$('gameDesc').textContent=games[g].desc;$('gameState').textContent='READY';$('target').style.display='none';$('arenaNote').classList.remove('hidden');$('arenaNote').innerHTML=g==='memory'?'시작을 누르면 숫자가 잠깐 보여!':'플레이 버튼을 눌러 시작!';$('startGame').textContent='플레이 시작';$('gamePanel').scrollIntoView({behavior:'smooth',block:'center'})}
+  document.querySelectorAll('[data-game]').forEach(b=>b.addEventListener('click',()=>chooseGame(b.dataset.game)));
+  $('heroPlay').addEventListener('click',()=>$('games').scrollIntoView({behavior:'smooth'}));
+  $('heroChat').addEventListener('click',()=>$('community').scrollIntoView({behavior:'smooth',block:'center'}));
+  function updateScore(){ $('score').textContent=String(score).padStart(4,'0')}
+  function stopGame(){running=false;clearInterval(timer);clearTimeout(timeout);timer=null;timeout=null;$('target').style.display='none'}
+  function finishGame(){if(!running)return;stopGame();$('gameState').textContent='FINISHED';$('arenaNote').classList.remove('hidden');$('arenaNote').textContent='끝! 최종 점수: '+score+'점';$('startGame').textContent='다시 플레이';saveScore();notify('게임 종료! '+score+'점 획득')}
+  function saveScore(){const all=safeParse(localStorage.getItem(KEY_SCORES),{});all[selectedGame]=Math.max(all[selectedGame]||0,score);localStorage.setItem(KEY_SCORES,JSON.stringify(all))}
+  function spawnTarget(){if(!running)return;const arena=$('arena'),t=$('target');const maxX=Math.max(0,arena.clientWidth-60),maxY=Math.max(0,arena.clientHeight-60);t.style.left=(Math.random()*maxX)+'px';t.style.top=(Math.random()*maxY)+'px';t.style.display='grid';$('arenaNote').classList.add('hidden')}
+  $('target').addEventListener('click',()=>{if(!running)return;if(selectedGame==='memory')return;score+=selectedGame==='clicker'?1:10;updateScore();spawnTarget()});
+  function startGame(){stopGame();score=0;updateScore();running=true;$('gameState').textContent='PLAYING';$('startGame').textContent='진행 중…';$('arenaNote').classList.add('hidden');
+    if(selectedGame==='memory'){const n=String(Math.floor(1000+Math.random()*9000));memoryAnswer=n;$('target').style.display='none';$('arenaNote').classList.remove('hidden');$('arenaNote').innerHTML='<div style="font-size:32px;color:var(--cyan);font-weight:900;letter-spacing:.2em">'+n+'</div><div style="margin-top:8px">숫자를 기억해!</div>';timeout=setTimeout(()=>{if(!running)return;$('arenaNote').innerHTML='<div>숫자를 입력해 봐!</div><form id="memoryForm" style="display:flex;gap:6px;margin-top:10px"><input id="memoryInput" inputmode="numeric" maxlength="4" placeholder="4자리 숫자" style="width:125px;background:#090c14;color:white;border:1px solid #39445e;border-radius:8px;padding:9px"><button class="btn primary" style="padding:9px" type="submit">확인</button></form>';const f=$('memoryForm');f.addEventListener('submit',e=>{e.preventDefault();if(!running)return;score=$('memoryInput').value===memoryAnswer?100:0;updateScore();finishGame();$('arenaNote').textContent=score?'정답! 완벽하게 기억했어!':'아쉽다! 정답은 '+memoryAnswer+'였어.'});$('memoryInput').focus()},1800);return}
+    spawnTarget();const duration=selectedGame==='clicker'?10000:20000;gameEnds=Date.now()+duration;timer=setInterval(()=>{const left=Math.max(0,gameEnds-Date.now());$('gameState').textContent=(left/1000).toFixed(1)+'s';if(left<=0)finishGame()},100)}
+  $('startGame').addEventListener('click',()=>{if(!user){openLogin();notify('플레이어 등록 후 시작할 수 있어.');return}if(!running)startGame()});
+  $('resetGame').addEventListener('click',()=>{stopGame();score=0;updateScore();$('gameState').textContent='READY';$('startGame').textContent='플레이 시작';$('arenaNote').classList.remove('hidden');$('arenaNote').textContent='초기화 완료! 플레이 버튼을 눌러 시작.'});
+  if(user)$('accountBtn').textContent='◉ '+user+' · 로그아웃';
+  renderChat();
+  // Keep the app usable when opened as a standalone HTML file.
+})();
+</script>
+
+<div id="previewHelp" style="position:fixed;inset:auto 12px 12px 12px;z-index:9999;background:#111522;border:1px solid #59f3ff66;border-radius:14px;padding:13px 15px;box-shadow:0 10px 35px #0009;display:none;font:13px/1.55 -apple-system,BlinkMacSystemFont,sans-serif;color:#eef2ff">
+  <button id="hidePreviewHelp" aria-label="안내 닫기" style="float:right;background:#ffffff12;border:1px solid #39445e;border-radius:8px;padding:4px 9px;color:#fff">닫기 ×</button>
+  <strong style="color:#59f3ff">실행 안내</strong><br>
+  미리보기에서 버튼이 작동하지 않나요? 이 파일을 기기에 저장한 뒤 Safari/Chrome에서 열어 주세요. 온라인 채팅과 회원 간 데이터 공유에는 별도 서버 연결이 필요해요.
+</div>
+<script>
+(function(){
+  try {
+    var isLikelyPreview = /ChatGPT|QuickLook/i.test(navigator.userAgent) ||
+      (location.protocol === 'blob:' || location.protocol === 'content:');
+    if(isLikelyPreview) document.getElementById('previewHelp').style.display='block';
+    document.getElementById('hidePreviewHelp').addEventListener('click',function(){
+      document.getElementById('previewHelp').style.display='none';
+    });
+  } catch(e) {}
+})();
+</script>
+
+</body>
+</html>
